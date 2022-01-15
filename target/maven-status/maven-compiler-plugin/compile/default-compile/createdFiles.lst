@@ -1,0 +1,4 @@
+shopizer\BasePage.class
+shopizer\PageAccueil.class
+shopizer\PagePayment.class
+shopizer\PagePanier.class
