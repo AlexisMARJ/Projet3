@@ -1,0 +1,14 @@
+# Project description file
+
+project.name=Shopizer
+project.version=8.3
+project.original.version=8.3
+product.name=NeoLoad
+product.original.name=NeoLoad
+product.version=8.0.0
+product.original.version=8.0.0
+project.is-open-test-settings-after-upload=false
+project.id=abc495e1-4ac8-4eba-80b9-e1f4d49cc891
+project.config.path=config.zip
+project.config.storage=ZIP
+team.server.enabled=false

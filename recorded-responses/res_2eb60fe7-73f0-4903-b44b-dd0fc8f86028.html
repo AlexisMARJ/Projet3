@@ -1,0 +1,1190 @@
+
+
+
+
+
+
+ 
+
+
+ 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  
+ 
+ 
+  
+  
+ 
+ 
+ <html xmlns="http://www.w3.org/1999/xhtml"> 
+ 
+ 
+     <head>
+        	 	<meta charset="utf-8">
+        	 	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    			<title>Passez votre commande</title>
+    			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    			<meta name="description" content="">
+    			<meta name="author" content="Importa">
+
+				<!-- include all header js and css -->
+                
+
+
+
+
+
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
+
+
+		<!-- CORE CSS -->
+		<link href="/shopizer/resources/templates/generic/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+		<!-- more fonts, cursor up -->
+        <link href="/shopizer/resources/templates/generic/css/animate.css" rel="stylesheet" type="text/css">
+        <link href="/shopizer/resources/templates/generic/css/slippry.css" rel="stylesheet" type="text/css">
+        <link href="/shopizer/resources/templates/generic/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+       
+
+		<link href="/shopizer/resources/templates/generic/css/meanmenu.min.css" rel="stylesheet" type="text/css">
+		<link href="/shopizer/resources/templates/generic/css/magnific-popup.css" rel="stylesheet" type="text/css">
+		<link href="/shopizer/resources/templates/generic/css/magnific-popup.css" rel="stylesheet" type="text/css">
+		<link href="/shopizer/resources/templates/generic/css/owl.carousel.css" rel="stylesheet" type="text/css">
+		<link href="/shopizer/resources/templates/generic/css/linearicons-icon-font.min.css" rel="stylesheet" type="text/css">
+		<link href="/shopizer/resources/templates/generic/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		
+		<link rel="icon" href="/shopizer/resources/templates/generic/img/favicon.ico"> 
+		
+		<!--  Theme -->
+
+		<link href="/shopizer/resources/templates/generic/css/style.css" rel="stylesheet" type="text/css">
+		<link href="/shopizer/resources/templates/generic/css/template.css" rel="stylesheet" type="text/css">
+		<link href="/shopizer/resources/templates/generic/css/responsive.css" rel="stylesheet" type="text/css">
+
+		<script src="/shopizer/resources/templates/generic/js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="/shopizer/resources/templates/generic/js/vendor/jquery-1.12.0.min.js"></script>
+    
+    	<!-- generic and common css file -->
+    	<link href="/shopizer/resources/css/sm.css" rel="stylesheet">
+    	<link href="/shopizer/resources/css/showLoading.css" rel="stylesheet">
+    	
+    	
+    	<script type="text/javascript">
+	    	//show overlay wait
+	    	function showTemplateLoading(element) {
+	    		$.LoadingOverlay("show");
+	    	}
+	    	
+	    	function hideTemplateLoading(element) {
+	    		$.LoadingOverlay("hide", true);
+	    	}
+    
+        </script>
+    
+    	<!-- ////////////// -->
+
+    <!-- mini shopping cart template -->
+    <script type="text/html" id="miniShoppingCartTemplate">
+		{{#shoppingCartItems}}
+			<tr id="{{productId}}" class="cart-product">
+				<td>
+			{{#image}}
+					<img width="40" src="{{contextPath}}{{image}}">
+			{{/image}}
+			{{^image}}
+					&nbsp
+			{{/image}}
+				</td>
+				<td>{{quantity}}</td>
+				<td>{{name}}</td>
+				<td>{{price}}</td>
+				<td><button productid="{{productId}}" class="close removeProductIcon" onclick="removeItemFromMinicart('{{id}}')">x</button></td>
+			</tr>
+		{{/shoppingCartItems}}
+	</script>
+	
+	
+	<!-- Google analytics -->	
+	<script type="text/javascript">
+	//<![CDATA[ 
+		  <!-- google analytics -->
+	  	   var _gaq = _gaq || [];
+	  	   _gaq.push(['_setAccount', 'google-analytics-token']);
+	  	   _gaq.push(['_trackPageview']);
+
+	  	   (function() {
+	    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	   		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  	   })();
+	  	//]]> 
+	</script>
+	
+	
+	
+                
+                
+                
+    <script type="text/html" id="productBoxTemplate">
+			{{#products}}
+                        <div itemscope itemtype="http://schema.org/Enumeration" class="col-md-COLUMN-SIZE col-sm-6 col-xs-12 product" item-order="{{sortOrder}}" item-name="{{description.name}}" item-price="{{price}}" data-id="{{id}}">
+								<div class="thumbnail product-img">
+                                    {{#image}}
+									<a href="/shopizer/shop/product/{{description.friendlyUrl}}.html">
+										<img src="{{image.imageUrl}}" alt="" />
+									</a>
+									{{/image}}
+								</div>
+								<div class="product-content text-center">
+									<a class="listing-product-name" href="/shopizer/shop/product/{{description.friendlyUrl}}.html"><h3 itemprop="name">{{description.name}}</h3></a>
+									<!--<span class="text-center width-100"><div class="stars" id="productRating_{{id}}"></div></span>-->
+									<h4>
+										{{#discounted}}<del>{{originalPrice}}</del>&nbsp;<span itemprop="price" class="specialPrice">{{finalPrice}}</span>{{/discounted}}
+										{{^discounted}}<span itemprop="price">{{finalPrice}}</span>{{/discounted}}
+									</h4>
+									
+									<div class="store-btn">
+      									<div class="store-btn-addtocart"><a class="addToCart" href="javascript:void(0)" productId="{{id}}">Ajouter au panier</a></div>
+   									</div>
+									
+								</div>
+						</div>
+			{{/products}}
+    </script>            
+                
+ 	</head>
+ 
+ 	<body>
+ 	
+ 	     <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+		
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+<script src="/shopizer/resources/js/hogan.js"></script>
+<script src="/shopizer/resources/templates/generic/js/bloodhound.min.js"></script>
+<script src="/shopizer/resources/templates/generic/js/typeahead.bundle.min.js"></script>
+
+
+<!-- Customer account menu logged in customer will display in customerAccount placeholder -->
+<script type="text/html" id="customerLoggedInAccountTemplate">
+			<ul>
+				<li class="click_menu"><a href="#">Bonjour <span>{{firstName}}</span><i class="fa fa-angle-down"></i></a>
+					<ul class="click_menu_show">
+						<li><a href="#" onClick="javascript:location.href='/shopizer/shop/customer/dashboard.html';" href="#">Mon compte</a></li>
+						<li><a href="#" onClick="javascript:location.href='/shopizer/shop/customer/logout';" href="#">Déconnection</a></li>
+					</ul>
+				</li>
+			</ul>
+			<script type="text/javascript">
+                (function($) {
+    			$(".click_menu").on('click', function() {
+        			$(".click_menu_show").slideToggle(400)
+    			});
+                })(jQuery);
+			</script>
+</script>
+
+<!-- Customer account menu not logged in customer will display in customerAccount placeholder -->
+<script type="text/html" id="customerNotLoggedInAccountTemplate">
+			<ul>
+				<li class="click_menu"><a href="#">Mon compte<i class="fa fa-angle-down"></i></a>
+					<ul class="click_menu_show">
+						<li><a href="#" id="registerLink" onClick="javascript:location.href='/shopizer/shop/customer/registration.html';">Enregistrer</a></li>
+						<li><a href="#" id="registerLink" onClick="javascript:location.href='/shopizer/shop/customer/customLogon.html';">Authentification</a></li>
+					</ul>
+				</li>
+			</ul>
+			<script type="text/javascript">
+                (function($) {
+    			$(".click_menu").on('click', function() {
+        			$(".click_menu_show").slideToggle(400)
+    			});
+                })(jQuery);
+			</script>
+</script>
+
+<!-- Mini shopping cart JS template -->
+<script type="text/html" id="miniCartTemplate">
+                          {{#code}}
+                          {{#shoppingCartItems}}
+                          <li>
+									<div class="cart-img">
+											{{#image}}
+												<img src="/shopizer{{image}}">
+											{{/image}}
+											{{^image}}
+												&nbsp
+											{{/image}}
+									</div>	
+									<div class="cart-content">
+											<h4><a href="#">{{quantity}} x {{name}}</a></h4>
+											<span class="cart-price">{{price}}</span>
+									</div>
+									<div class="cart-del">
+											<button productid="{{productId}}" class="close removeProductIcon" onclick="removeItemFromMinicart('{{id}}')"><i class="fa fa-times-circle"></i></a>
+									</div>			
+							</li>
+                            {{/shoppingCartItems}}
+                            <li>&nbsp;</li>
+							<li class="total-price">Total&nbsp;{{total}}</li>
+							<li class="checkout-bg">
+									<a href="#" onclick="viewShoppingCartPage();">Paiement<i class="fa fa-angle-right"></i></a>
+							</li>
+                            {{/code}}
+							{{^code}}
+							<h4 style="text-align: center;color:#666666;margin-top:10px;margin-bottom:10px;">Aucun item dans le panier d'achat</h4>
+						    {{/code}}
+
+</script>
+
+<!-- mini cart label button template -->
+<script type="text/html" id="miniCartSummaryTemplate">
+		<!-- empty cart and full summary subTotal & quantity -->
+		{{^code}}
+		<a href="#"><span class="lnr lnr-cart"></span>Panier d'achat (0)</a>
+		{{/code}}
+		{{#code}}
+		<a href="#"><span class="lnr lnr-cart"></span>Panier d'achat <font color="red"><strong>({{quantity}})</strong></font></a>
+		{{/code}}
+</script>
+
+
+<!-- header-start -->
+		<header>
+			<div class="header-top-area ptb-10 hidden-xs">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-9 col-md-8 col-sm-8">
+						    
+							<div class="dropdown header-left-menu">
+								 
+									
+								  
+									
+									  <a href="/shopizer/shop?locale=fr">Français</a>
+								    
+								  
+							</div>
+							
+							
+							<!-- placeholder for customer account -->
+							<div class="header-top-left" id="customerAccount" style="margin-left:20px;"></div>
+							
+							
+							<button class="btn btn-default header-left-menu type="button" onClick="javascript:location.href='/shopizer/shop/store/contactus.html';" aria-haspopup="true" aria-expanded="true">
+								<a href="/shopizer/shop/store/contactus.html">Contactez-nous</a>
+							</button>
+							
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-4">
+							<div class="header-top-right">
+							<!-- Empty placeholder -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom-area ptb-10">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-2 col-sm-3 col-xs-12">
+						    <!-- logo -->
+							<div class="logo">
+								
+									
+									
+										
+						                		
+						                			<!--  use merchant store logo -->
+						                			<a class="grey store-name" href="/shopizer/shop/">
+						                			<img class="logoImage" src="/shopizer/static/files/DEFAULT/LOGO/logo.png"/>
+						                			</a>
+						                		
+						                		
+						                
+									
+								
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-5 hidden-sm hidden-xs">
+						
+							
+						
+							<!--
+							<div class="single-header-bottom-info">
+								<div class="header-bottom-icon">
+									<span class="lnr lnr-rocket"></span>
+								</div>
+								<div class="header-bottom-text">
+								</div>
+							</div>
+							-->
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-9 col-xs-12">
+						    <!-- search box -->
+		                    
+
+		                    <div class="input-group menu-search-box">
+   								<input type="text" class="form-control typeahead" type="search" name="q" id="searchField" placeholder="Recherche" value="" />
+   								<span class="input-group-btn">
+        							<button class="btn btn-default searchButton" type="button">Recherche</button>
+   								</span>
+								<!-- important for submitting search -->
+                                <form id="hiddenSearchForm" method="post" action="/shopizer/shop/search/search.html">
+										<input type="hidden" id="hiddenQuery" name="q">
+								</form>
+							</div>
+							
+
+							
+						    <!-- Shopping cart -->
+						    						    						
+								<div class="header-bottom-right">
+									<div class="shop-cart" id="miniCartSummary"></div>
+									<div class="shop-cart-hover fix">
+									<ul id="miniCartDetails"></ul>
+									</div>
+								</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header-end -->
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//***** Search code *****
+$(document).ready(function() { 
+
+    //post search form
+   $(".searchButton").click(function(e){
+			var searchQuery = $('#searchField').val();
+			var q = searchQuery;
+			if(q==null || q =='') {
+				return;
+			}
+			$('#hiddenQuery').val(q);
+			var uri = '/shopizer/shop/search/search.html';
+			e.preventDefault();//action url will be overriden
+	        $('#hiddenSearchForm').attr('action',uri).submit();
+   });
+
+   
+   
+	
+   var searchElements = new Bloodhound({
+		datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		
+	    remote: {
+    		url: '/shopizer/services/public/search/DEFAULT/en/autocomplete.json?q=%QUERY',
+        	filter: function (parsedResponse) {
+            	// parsedResponse is the array returned from your backend
+            	console.log(parsedResponse);
+
+            	// do whatever processing you need here
+            	return JSON.parse(parsedResponse);
+        	}
+    	}
+	});
+   
+   searchElements.initialize();
+
+
+	var searchTemplate =  Hogan.compile([
+				     '<p class="suggestion-text"><font color="black">{{value}}</font></p>'
+	             ].join(''));
+	
+	
+    //full view search
+	$('#searchField.typeahead').typeahead({
+	    hint: true,
+	    highlight: true,
+	    minLength: 1
+	}, {
+		name: 'shopizer-search',
+	    displayKey: 'value',
+	    source: searchElements.ttAdapter(),
+	    templates: {
+	    	suggestion: function (data) { return searchTemplate.render(data); }
+	    }
+	});
+    
+    //responsive
+	$('#responsiveSearchField.typeahead').typeahead({
+	    hint: true,
+	    highlight: true,
+	    minLength: 1
+	}, {
+		name: 'modal-shopizer-search',
+	    displayKey: 'value',
+	    source: searchElements.ttAdapter(),
+	    templates: {
+	    	suggestion: function (data) { return searchTemplate.render(data); }
+	    }
+	});
+
+});
+
+</script>
+
+
+		<!-- mainmenu-area-start -->
+		<div class="mainmenu-area bg-color-1" id="main_h">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
+						<div class="mainmenu hidden-xs">
+							<nav>
+								<ul>
+								
+								
+									   <li class=""><a href="/shopizer/shop/category/test-code-check.html/ref=c:161">test code check</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/tables.html/ref=c:1">Tables</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/living-room.html/ref=c:2">Living Room</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/bedroom.html/ref=c:50">Bedroom</a>
+										
+										<ul>
+											
+												<li><a href="/shopizer/shop/category/night-tables.html/ref=c:100">Night Tables</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/decorations.html/ref=c:53">Decorations</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/late-test.html/ref=c:400">Late Test</a>
+										
+										<ul>
+											
+												<li><a href="/shopizer/shop/category/lt-sub-category.html/ref=c:401">LT Sub category</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/category-refactoring.html/ref=c:450">Category Refactoring</a>
+										
+										<ul>
+											
+												<li><a href="/shopizer/shop/category/test-789.html/ref=c:650">Test 789</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+							    
+										
+								
+										
+												<li><a href="/shopizer/shop/pages/terms-and-policy.html" class="current">Terms and Policy</a></li>
+										
+								
+										
+								
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- mobile menu -->
+		<div class="mobile-menu-area hidden-sm hidden-md hidden-lg">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mobile-menu">
+							<nav id="mobile-menu">
+								<ul>
+								
+								
+									   <li class=""><a href="/shopizer/shop/category/test-code-check.html/ref=c:161">test code check</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/tables.html/ref=c:1">Tables</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/living-room.html/ref=c:2">Living Room</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/bedroom.html/ref=c:50">Bedroom</a>
+										
+										<ul>
+											
+												<li><a href="/shopizer/shop/category/night-tables.html/ref=c:100">Night Tables</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/decorations.html/ref=c:53">Decorations</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/late-test.html/ref=c:400">Late Test</a>
+										
+										<ul>
+											
+												<li><a href="/shopizer/shop/category/lt-sub-category.html/ref=c:401">LT Sub category</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+									   <li class=""><a href="/shopizer/shop/category/category-refactoring.html/ref=c:450">Category Refactoring</a>
+										
+										<ul>
+											
+												<li><a href="/shopizer/shop/category/test-789.html/ref=c:650">Test 789</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- mainmenu-area-end -->
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+<script
+	src="/shopizer/resources/js/jquery.alphanumeric.pack.js"></script>
+
+<div class="entry-header-area ptb-40">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="entry-header">
+					<h1 class="entry-title">
+						Revoir votre commande
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="store.error" class="alert alert-error alert-danger"
+	style="display: none;">
+	Une erreur est survenue pendant la mise à jour du panier d'achat
+</div>
+
+
+<!-- cart-main-area start -->
+<div class="cart-main-area ptb-40">
+	<div class="container">
+
+
+		<!-- Unavailables -->
+		
+		
+			
+				
+					
+
+						<!-- cart-main-area start -->
+						<div class="cart-main-area ptb-40">
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<div class="table-content table-responsive">
+											<!-- 
+							Shopping cart has to be id=mainartTable
+							 -->
+											<table id="mainCartTable"
+												class="table table-hover table-condensed">
+												
+													
+
+														<thead>
+															<tr>
+																<th>Article</th>
+																<th>Quantité</th>
+																<th>Prix</th>
+																<th>Total</th>
+																<th></th>
+
+
+															</tr>
+														</thead>
+														<tbody>
+													
+													<form id="shoppingCartLineitem_2002" action="/shopizer/shop/cart/shoppingCart.html" method="post">
+														<tr>
+															<td
+																data-th="Article">
+																<div class="row-cart">
+
+																	<div class="col-sm-4 hidden-xs">
+																		
+																			<img width="60"
+																				src="/shopizer/static/products/DEFAULT/SKU111/SMALL/night-table.jpg"
+																				class="">
+																		
+																	</div>
+																	<div class="col-sm-8">
+																		<span class="nomargin"><strong>Compact night table</strong></span>
+
+																		
+																	</div>
+																</div>
+															</td>
+															<td width="10%"
+																data-th="Quantité">
+																<input type="tel"
+																class="input-small quantity text-center"
+																value="2" name="quantity"
+																id="2002"
+																>
+															</td>
+
+															<td
+																data-th="Prix"><strong>US$129.99</strong></td>
+															<td
+																data-th="Total"
+																class=""><strong>US$259.98</strong></td>
+
+															<td width="10%" class="actions" data-th="">
+																<div class="cart-del">
+																	<a href="#" class="cart-close removeProductIcon"
+																		style="clear: both !important;"
+																		onclick="javascript:updateLineItem('2002','/shopizer/shop/cart/removeShoppingCartItem.html'); return false;">
+																		<i class="fa fa-times"></i>
+																	</a> <input type="hidden" name="lineItemId" id="lineItemId"
+																		value="2002" />
+																</div>
+															</td>
+
+														</tr>
+													</form>
+												
+											</table>
+										</div>
+
+										<div class="row">
+											<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+												<div class="buttons-cart">
+													<a href="#"
+														onClick="javascript:updateCart('#mainCartTable');">Recalculer</a> <a
+														href="/shopizer/shop">Continuez votre magasinage</a>
+												</div>
+												<!--
+												<div class="coupon">
+													<h3>Coupon</h3>
+													<p>Enter your coupon code if you have one.</p>
+													<input type="text" placeholder="Coupon code" />
+													<input type="submit" value="Apply Coupon" />
+												</div>
+												-->
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+												<div class="cart_totals">
+
+													<h2>
+														Total
+													</h2>
+													<div class="cart-totals-table">
+														<table>
+															<tbody>
+																
+																	<tr class="cart-subtotal">
+																		<th>Sous-total</th>
+																		<td><span class="amount">US$259.98</span></td>
+																	</tr>
+																
+																	<tr class="cart-subtotal">
+																		<th>Total</th>
+																		<td><span class="amount">US$259.98</span></td>
+																	</tr>
+																
+															</tbody>
+														</table>
+													</div>
+												</div>
+												<div class="wc-proceed-to-checkout">
+													<a href="/shopizer/shop/order/checkout.html">Effectuer le paiement</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- cart-main-area end -->
+
+					
+					
+				
+			
+			
+		
+	</div>
+</div>
+<!-- cart-main-area end -->
+
+
+
+
+<script>
+	$(document).ready(function() {
+		$('.quantity').numeric();
+		$("input[type='text']").keypress(function(e) {
+			if (e.which == 13) {
+				e.preventDefault();
+			}
+		});
+		$('#checkoutButton').click(function(e) {
+			location.href = '/shopizer/shop/order/checkout.html';
+		});
+	});
+</script>
+
+	
+		
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+		<!-- footer-area-start -->
+		<div class="footer-area ptb-80">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mar_b-30">
+						<div class="footer-wrapper">
+							 
+							<ul>
+								
+
+
+
+
+
+
+
+
+ <address> 
+ 	<div itemscope itemtype="http://schema.org/Organization"> 
+ 	<strong><span itemprop="name">Importa</span></strong><br/>  
+ 	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> 
+ 	<span itemprop="streetAddress">2545 commerce street Montreal</span><br/>
+ 	<span itemprop="addressLocality"><script>$.ajax({url: "/shopizer/shop/reference/zoneName",type: "GET",data: "zoneCode=QC",success: function(data){$('#storeZoneName').html(data)}})</script><span id="storeZoneName">QC</span>,
+ 	<span id="storeCountryName"><script>$.ajax({url: "/shopizer/shop/reference/countryName",type: "GET",data: "countryCode=CA",success: function(data){$('#storeCountryName').html(data)}})</script></span></span><br/>
+ 	<span itemprop="postalCode">H2H-2H2</span><br/>
+ 	<abbr title="Phone">Téléphone</abbr>: <span itemprop="telephone">888-988-8888</span>
+ 	</div>
+ 	</div>
+ </address> 
+
+								
+							</ul>
+							
+							
+							
+							   <ul class="footer-social">
+							       
+								   
+								   <li class="facebook"><a target="_blank" href="https://www.facebook.com/Shopizer/"><i class="fa fa-facebook"></i></a></li>
+								   
+								   
+								   <li class="pinterest"><a target="_blank" href="http://pinterest.com/shopizer"><i class="fa fa-pinterest"></i></a></li>
+								   
+								   
+							   	   <li class="instagram"><a target="_blank" href="http://instagram.com/shopizer"><i class="fa fa-instagram"></i></a></li>
+							       
+							   </ul>
+						   
+
+						</div>
+					</div>
+					<!--<div class="col-lg-2 col-md-3 hidden-sm col-xs-12 mar_b-30">-->
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mar_b-30">
+						<div class="footer-wrapper">
+						    <!--
+							<div class="footer-title">
+								<a href="#"><h3>useful links</h3></a>
+							</div>
+							-->
+							<div class="footer-wrapper">
+								
+								<ul class="usefull-link">
+									<li class="">
+										<a href="/shopizer/shop">Page d'accueil</a>
+									</li>
+									
+								   <li>
+	    								<a href="/shopizer/shop/category/test-code-check.html/ref=c:161" class="current"> 
+	    									<span class="name">test code check</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shopizer/shop/category/tables.html/ref=c:1" class="current"> 
+	    									<span class="name">Tables</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shopizer/shop/category/living-room.html/ref=c:2" class="current"> 
+	    									<span class="name">Living Room</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shopizer/shop/category/bedroom.html/ref=c:50" class="current"> 
+	    									<span class="name">Bedroom</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shopizer/shop/category/decorations.html/ref=c:53" class="current"> 
+	    									<span class="name">Decorations</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shopizer/shop/category/late-test.html/ref=c:400" class="current"> 
+	    									<span class="name">Late Test</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shopizer/shop/category/category-refactoring.html/ref=c:450" class="current"> 
+	    									<span class="name">Category Refactoring</span>
+	    								</a>
+	    							</li> 
+									
+								    
+											   <li><a href="/shopizer/shop/pages/.html" class="current">Importa</a></li>
+									
+											   <li><a href="/shopizer/shop/pages/terms-and-policy.html" class="current">Terms and Policy</a></li>
+									
+											   <li><a href="/shopizer/shop/pages/test-page.html" class="current">Test_Page</a></li>
+									
+									
+										<li class=""><a href="/shopizer/shop/store/contactus.html">Contactez-nous</a></li>
+									
+									
+										 
+										 
+										
+										 
+											  <li><a href="/shopizer/shop?locale=fr">Français</a></li>
+										
+										
+									
+									
+						                     
+						                       
+						                        
+														<li><a href="/shopizer/shop/customer/registration.html">Enregistrer</a></li>
+														<li><a href="/shopizer/shop/customer/customLogon.html">Authentification</a></li>
+												
+									
+								</ul>
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div class="footer-wrapper">
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer-area-end -->
+		<!-- .copyright-area-start -->
+		<div class="copyright-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mar_b-30">
+						<div class="copyright text-left">
+							<p>© Importa 2019-2022&nbsp;-&nbsp;Propulsé par <a href="http://www.shopizer.com" class="footer-href" target="_blank">Shopizer</a></p>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						
+						<div class="copyright-img text-right">
+							<img src="/resources/img/payment/icons/MasterCard.png" width="50" alt="" />&nbsp;<img src="/resources/img/payment/icons/Visa.png" width="50" alt="" />&nbsp;<img src="/resources/img/payment/icons/AmericanExpress.png" width="50" alt="" />&nbsp;<img src="/resources/img/payment/icons/PayPal.png" width="50" alt="" />
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- .copyright-area-end -->
+
+	
+
+
+
+
+
+
+    <!-- specific js files -->
+    <!-- do only change the list of js files -->
+    <!-- ////////////// -->
+
+    
+    
+    <script src="/shopizer/resources/templates/generic/js/bootstrap.min.js"></script>
+    <script src="/shopizer/resources/templates/generic/js/owl.carousel.min.js"></script>
+    <script src="/shopizer/resources/templates/generic/js/jquery.meanmenu.js"></script>
+    <script src="/shopizer/resources/templates/generic/js/jquery-ui.min.js"></script>
+    <script src="/shopizer/resources/templates/generic/js/slippry.min.js"></script>
+    <script src="/shopizer/resources/templates/generic/js/wow.min.js"></script>
+    <script src="/shopizer/resources/templates/generic/js/jquery.scrolly.js"></script>
+    <script src="/shopizer/resources/templates/generic/js/loadingoverlay.min.js"></script>
+    
+    
+    <script src="/shopizer/resources/templates/generic/js/jquery.magnific-popup.min.js"></script>
+    <script src="/shopizer/resources/templates/generic/js/plugins.js"></script>
+
+    
+    
+    
+    <script src="/shopizer/resources/templates/generic/js/main.js"></script>
+  
+    
+    
+    <!-- required common scripts for shopizer -->
+    <script src="/shopizer/resources/js/jquery.raty.min.js"></script>
+	<script src="/shopizer/resources/js/shop-functions.js"></script>
+	<script src="/shopizer/resources/js/shop-customer.js"></script>
+    
+
+
+
+ 
+
+
+
+<script>
+
+function getContextPath() {
+   return "/shopizer";
+}
+
+function getMerchantStore() {
+   return "1";
+}
+
+function getMerchantStoreCode() {
+   return "DEFAULT";
+}
+
+function getLanguageCode() {
+   return "en";
+}
+
+function supportsCustomerLogin() {
+	
+	
+		return true;
+	
+	
+	
+}
+
+function getItemLabel(quantity) {
+	var labelItem = 'article';
+	if (quantity > 1) {
+		labelItem = 'articles';
+	}
+	return labelItem;
+}
+
+//assign rating on a list of products
+function setProductRating(productList) {
+	jQuery.each( productList, function( i, val ) {
+		var pId = '#productRating_' + val.id; 
+	    $(pId).raty({ 
+			readOnly: true,
+			half: true,
+			path : '/shopizer/resources/img/stars/',
+			score: val.ratingCount
+		});
+	 });
+}
+
+function getLoginErrorLabel() {
+	return 'Authentication échouée. Le nom d\'usager ou le mot de passe est invalide.';
+}
+
+function getEmptyCartLabel() {
+	return 'Your Shopping cart is empty';
+}
+
+
+function getInvalidEmailMessage() {
+	return 'Veuillez fournir une adress courriel valide';
+}
+
+function getInvalidUserNameMessage() {
+	return 'Le nom d\'usager doit contenir au moins 6 caractères';
+}
+
+
+function getInvalidPasswordMessage() {
+	return 'Le mot de passe doit avoir au moins 6 caractéres';
+}
+
+function getInvalidCheckPasswordMessage() {
+	return 'Les deux mots de passe doivent être identiques';
+}
+
+function cartInfoLabel(cart){
+	 var labelItem = getItemLabel(cart.quantity);
+	 <!-- A configuration is required to display quantity and price -->
+	 
+	 
+	 
+	 $("#cartinfo").html('<span id="cartqty">(' + cart.quantity + ' ' + labelItem + ')</span>');
+	 
+	 
+}
+
+function cartSubTotal(cart) {
+	return '<div class="pull-right"><font class="total-box-label">Sous-total : <font class="total-box-price"><strong><span id="checkout-total">' + cart.subTotal + '</span></strong></font></font></div>';
+}
+
+
+function getOrderValidationMessage(messageKey) {
+	
+	//stripe messages
+	var invalid_number 	= 'Le numéro de carte de crédit est invalide';
+	var error_creditcard 	= 'Les données de la carte de crédit sont invalides';
+	var invalid_expiry_month = 'La date d\'expiration de la carte de crédit est invalide';
+	var invalid_expiry_year = 'La date d\'expiration de la carte de crédit est invalide';
+	var invalid_cvc 	= 'Le numéro de vérification inscrit sur la carte est invalide';
+	var incorrect_number = 'Le numéro de carte de crédit est invalide';
+	var expired_card 	= 'La transaction a été refusée';
+	var incorrect_cvc 	= 'Le numéro de vérification inscrit sur la carte est invalide';
+	var card_declined 	= 'La transaction a été refusée';
+	var processing_error = 'Une erreur est survenue en essayant de compléter le paiement, si possible utiliser une autre méthode de paiement.';
+	var rate_limit = 'Une erreur est survenue en essayant de compléter le paiement, si possible utiliser une autre méthode de paiement.';
+	
+	var map = new Object(); // or var map = {};
+	map['invalid_number'] = invalid_number;
+	map['error_creditcard'] = error_creditcard;
+	map['invalid_expiry_month'] = invalid_expiry_month;
+	map['invalid_expiry_year'] = invalid_expiry_year;
+	map['invalid_cvc'] = invalid_cvc;
+	map['incorrect_number'] = incorrect_number;
+	map['expired_card'] = expired_card;
+	map['incorrect_cvc'] = incorrect_cvc;
+	map['card_declined'] = card_declined;
+	map['processing_error'] = processing_error;
+	map['rate_limit'] = rate_limit;
+	
+	//log('Got message key ' + messageKey);
+	
+	var message = map[messageKey];
+	
+	if(message==null) {
+		message = messageKey;
+	}
+	
+	return message;
+
+	
+}
+
+
+
+
+</script>
+    <script src="/shopizer/resources/js/json2.js"></script>
+    <script src="/shopizer/resources/js/jquery-cookie.js"></script>
+    <script src="/shopizer/resources/js/shop-minicart.js"></script>
+    <script src="/shopizer/resources/js/shop-account.js"></script>
+    <script src="/shopizer/resources/js/login.js"></script>
+    <script src="/shopizer/resources/js/jquery.showLoading.min.js"></script>
+
+
+	<!-- ////////////// -->
+
+
+     
+
+   
+
+ 	</body>
+ 
+ </html>
+ 

@@ -1,0 +1,11 @@
+GET http://192.168.1.21:8080/shopizer/shop/reference/countryName?countryCode=CA HTTP/1.1
+Accept: */*
+X-Requested-With: XMLHttpRequest
+Referer: http://192.168.1.21:8080/shopizer/shop/category/night-tables.html/ref=c:100
+Accept-Language: fr-FR,fr;q=0.5
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: 192.168.1.21:8080
+Proxy-Connection: Keep-Alive
+Cookie: JSESSIONID=29CA6EC5F0C163E14E36FCF796373D9F; __utmz=23060091.1641915892.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utma=23060091.1428915512.1641915892.1641915892.1641919475.2; cart=DEFAULT_69ba55b28e114c01a27c8597ac93a60e; __utmb=23060091.2.10.1641919475; __utmc=23060091; __utmt=1
+

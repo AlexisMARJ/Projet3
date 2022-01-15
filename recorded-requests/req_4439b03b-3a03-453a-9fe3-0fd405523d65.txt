@@ -1,0 +1,10 @@
+GET http://192.168.1.21:8080/shopizer/resources/templates/generic/img/favicon.ico HTTP/1.1
+Host: 192.168.1.21:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0
+Accept: image/avif,image/webp,*/*
+Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://192.168.1.21:8080/shopizer/shop
+Cookie: JSESSIONID=7D836EEA007F07F9B8068C4636BE303C
+

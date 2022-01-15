@@ -1,0 +1,11 @@
+GET http://192.168.1.21:8080/shopizer/shop/category/night-tables.html/ref=c:100 HTTP/1.1
+Host: 192.168.1.21:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://192.168.1.21:8080/shopizer/shop
+Cookie: JSESSIONID=7D836EEA007F07F9B8068C4636BE303C; __utma=23060091.955732524.1641918685.1641918685.1641918685.1; __utmb=23060091.1.10.1641918685; __utmc=23060091; __utmz=23060091.1641918685.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+Upgrade-Insecure-Requests: 1
+

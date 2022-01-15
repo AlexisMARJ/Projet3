@@ -1,0 +1,10 @@
+GET http://192.168.1.21:8080/shopizer/static/files/DEFAULT/LOGO/logo.png HTTP/1.1
+Host: 192.168.1.21:8080
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0
+Accept: image/avif,image/webp,*/*
+Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://192.168.1.21:8080/shopizer/shop/cart/shoppingCart.html
+Cookie: JSESSIONID=1519D0701AF3F079F0C72719376BF6CC; __utma=23060091.1487694796.1641914967.1641914967.1641914967.1; __utmb=23060091.2.10.1641914967; __utmc=23060091; __utmz=23060091.1641914967.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1; cart=DEFAULT_9cf5fefcaf7c471589fff75143e14fcd
+

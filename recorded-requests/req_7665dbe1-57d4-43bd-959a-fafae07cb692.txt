@@ -1,0 +1,10 @@
+GET http://alexismarjollet.ddns.net:8080/resources/img/payment/icons/AmericanExpress.png HTTP/1.1
+Host: alexismarjollet.ddns.net:8080
+Proxy-Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Referer: http://alexismarjollet.ddns.net:8080/shop
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: JSESSIONID=9AD480B48D2161C3308DC3D5C8F9EEE8
+

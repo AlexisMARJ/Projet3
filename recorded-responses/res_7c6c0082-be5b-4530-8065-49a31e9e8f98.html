@@ -1,0 +1,1661 @@
+
+
+
+
+
+
+ 
+
+
+ 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  
+ 
+ 
+  
+  
+ 
+ 
+ <html xmlns="http://www.w3.org/1999/xhtml"> 
+ 
+ 
+     <head>
+        	 	<meta charset="utf-8">
+        	 	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    			<title>Importa</title>
+    			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    			<meta name="description" content="Importa">
+    			<meta name="author" content="Importa">
+
+				<!-- include all header js and css -->
+                
+
+
+
+
+
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
+
+
+		<!-- CORE CSS -->
+		<link href="/resources/templates/generic/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+		<!-- more fonts, cursor up -->
+        <link href="/resources/templates/generic/css/animate.css" rel="stylesheet" type="text/css">
+        <link href="/resources/templates/generic/css/slippry.css" rel="stylesheet" type="text/css">
+        <link href="/resources/templates/generic/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+       
+
+		<link href="/resources/templates/generic/css/meanmenu.min.css" rel="stylesheet" type="text/css">
+		<link href="/resources/templates/generic/css/magnific-popup.css" rel="stylesheet" type="text/css">
+		<link href="/resources/templates/generic/css/magnific-popup.css" rel="stylesheet" type="text/css">
+		<link href="/resources/templates/generic/css/owl.carousel.css" rel="stylesheet" type="text/css">
+		<link href="/resources/templates/generic/css/linearicons-icon-font.min.css" rel="stylesheet" type="text/css">
+		<link href="/resources/templates/generic/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		
+		<link rel="icon" href="/resources/templates/generic/img/favicon.ico"> 
+		
+		<!--  Theme -->
+
+		<link href="/resources/templates/generic/css/style.css" rel="stylesheet" type="text/css">
+		<link href="/resources/templates/generic/css/template.css" rel="stylesheet" type="text/css">
+		<link href="/resources/templates/generic/css/responsive.css" rel="stylesheet" type="text/css">
+
+		<script src="/resources/templates/generic/js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="/resources/templates/generic/js/vendor/jquery-1.12.0.min.js"></script>
+    
+    	<!-- generic and common css file -->
+    	<link href="/resources/css/sm.css" rel="stylesheet">
+    	<link href="/resources/css/showLoading.css" rel="stylesheet">
+    	
+    	
+    	<script type="text/javascript">
+	    	//show overlay wait
+	    	function showTemplateLoading(element) {
+	    		$.LoadingOverlay("show");
+	    	}
+	    	
+	    	function hideTemplateLoading(element) {
+	    		$.LoadingOverlay("hide", true);
+	    	}
+    
+        </script>
+    
+    	<!-- ////////////// -->
+
+    <!-- mini shopping cart template -->
+    <script type="text/html" id="miniShoppingCartTemplate">
+		{{#shoppingCartItems}}
+			<tr id="{{productId}}" class="cart-product">
+				<td>
+			{{#image}}
+					<img width="40" src="{{contextPath}}{{image}}">
+			{{/image}}
+			{{^image}}
+					&nbsp
+			{{/image}}
+				</td>
+				<td>{{quantity}}</td>
+				<td>{{name}}</td>
+				<td>{{price}}</td>
+				<td><button productid="{{productId}}" class="close removeProductIcon" onclick="removeItemFromMinicart('{{id}}')">x</button></td>
+			</tr>
+		{{/shoppingCartItems}}
+	</script>
+	
+	
+	<!-- Google analytics -->	
+	<script type="text/javascript">
+	//<![CDATA[ 
+		  <!-- google analytics -->
+	  	   var _gaq = _gaq || [];
+	  	   _gaq.push(['_setAccount', 'google-analytics-token']);
+	  	   _gaq.push(['_trackPageview']);
+
+	  	   (function() {
+	    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	   		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  	   })();
+	  	//]]> 
+	</script>
+	
+	
+	
+                
+                
+                
+    <script type="text/html" id="productBoxTemplate">
+			{{#products}}
+                        <div itemscope itemtype="http://schema.org/Enumeration" class="col-md-COLUMN-SIZE col-sm-6 col-xs-12 product" item-order="{{sortOrder}}" item-name="{{description.name}}" item-price="{{price}}" data-id="{{id}}">
+								<div class="thumbnail product-img">
+                                    {{#image}}
+									<a href="/shop/product/{{description.friendlyUrl}}.html">
+										<img src="{{image.imageUrl}}" alt="" />
+									</a>
+									{{/image}}
+								</div>
+								<div class="product-content text-center">
+									<a class="listing-product-name" href="/shop/product/{{description.friendlyUrl}}.html"><h3 itemprop="name">{{description.name}}</h3></a>
+									<!--<span class="text-center width-100"><div class="stars" id="productRating_{{id}}"></div></span>-->
+									<h4>
+										{{#discounted}}<del>{{originalPrice}}</del>&nbsp;<span itemprop="price" class="specialPrice">{{finalPrice}}</span>{{/discounted}}
+										{{^discounted}}<span itemprop="price">{{finalPrice}}</span>{{/discounted}}
+									</h4>
+									
+									<div class="store-btn">
+      									<div class="store-btn-addtocart"><a class="addToCart" href="javascript:void(0)" productId="{{id}}">Ajouter au panier</a></div>
+   									</div>
+									
+								</div>
+						</div>
+			{{/products}}
+    </script>            
+                
+ 	</head>
+ 
+ 	<body>
+ 	
+ 	     <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+		
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+<script src="/resources/js/hogan.js"></script>
+<script src="/resources/templates/generic/js/bloodhound.min.js"></script>
+<script src="/resources/templates/generic/js/typeahead.bundle.min.js"></script>
+
+
+<!-- Customer account menu logged in customer will display in customerAccount placeholder -->
+<script type="text/html" id="customerLoggedInAccountTemplate">
+			<ul>
+				<li class="click_menu"><a href="#">Bonjour <span>{{firstName}}</span><i class="fa fa-angle-down"></i></a>
+					<ul class="click_menu_show">
+						<li><a href="#" onClick="javascript:location.href='/shop/customer/dashboard.html';" href="#">Mon compte</a></li>
+						<li><a href="#" onClick="javascript:location.href='/shop/customer/logout';" href="#">Déconnection</a></li>
+					</ul>
+				</li>
+			</ul>
+			<script type="text/javascript">
+                (function($) {
+    			$(".click_menu").on('click', function() {
+        			$(".click_menu_show").slideToggle(400)
+    			});
+                })(jQuery);
+			</script>
+</script>
+
+<!-- Customer account menu not logged in customer will display in customerAccount placeholder -->
+<script type="text/html" id="customerNotLoggedInAccountTemplate">
+			<ul>
+				<li class="click_menu"><a href="#">Mon compte<i class="fa fa-angle-down"></i></a>
+					<ul class="click_menu_show">
+						<li><a href="#" id="registerLink" onClick="javascript:location.href='/shop/customer/registration.html';">Enregistrer</a></li>
+						<li><a href="#" id="registerLink" onClick="javascript:location.href='/shop/customer/customLogon.html';">Authentification</a></li>
+					</ul>
+				</li>
+			</ul>
+			<script type="text/javascript">
+                (function($) {
+    			$(".click_menu").on('click', function() {
+        			$(".click_menu_show").slideToggle(400)
+    			});
+                })(jQuery);
+			</script>
+</script>
+
+<!-- Mini shopping cart JS template -->
+<script type="text/html" id="miniCartTemplate">
+                          {{#code}}
+                          {{#shoppingCartItems}}
+                          <li>
+									<div class="cart-img">
+											{{#image}}
+												<img src="{{image}}">
+											{{/image}}
+											{{^image}}
+												&nbsp
+											{{/image}}
+									</div>	
+									<div class="cart-content">
+											<h4><a href="#">{{quantity}} x {{name}}</a></h4>
+											<span class="cart-price">{{price}}</span>
+									</div>
+									<div class="cart-del">
+											<button productid="{{productId}}" class="close removeProductIcon" onclick="removeItemFromMinicart('{{id}}')"><i class="fa fa-times-circle"></i></a>
+									</div>			
+							</li>
+                            {{/shoppingCartItems}}
+                            <li>&nbsp;</li>
+							<li class="total-price">Total&nbsp;{{total}}</li>
+							<li class="checkout-bg">
+									<a href="#" onclick="viewShoppingCartPage();">Paiement<i class="fa fa-angle-right"></i></a>
+							</li>
+                            {{/code}}
+							{{^code}}
+							<h4 style="text-align: center;color:#666666;margin-top:10px;margin-bottom:10px;">Aucun item dans le panier d'achat</h4>
+						    {{/code}}
+
+</script>
+
+<!-- mini cart label button template -->
+<script type="text/html" id="miniCartSummaryTemplate">
+		<!-- empty cart and full summary subTotal & quantity -->
+		{{^code}}
+		<a href="#"><span class="lnr lnr-cart"></span>Panier d'achat (0)</a>
+		{{/code}}
+		{{#code}}
+		<a href="#"><span class="lnr lnr-cart"></span>Panier d'achat <font color="red"><strong>({{quantity}})</strong></font></a>
+		{{/code}}
+</script>
+
+
+<!-- header-start -->
+		<header>
+			<div class="header-top-area ptb-10 hidden-xs">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-9 col-md-8 col-sm-8">
+						    
+							<div class="dropdown header-left-menu">
+								 
+									
+								  
+									
+									  <a href="/shop?locale=fr">Français</a>
+								    
+								  
+							</div>
+							
+							
+							<!-- placeholder for customer account -->
+							<div class="header-top-left" id="customerAccount" style="margin-left:20px;"></div>
+							
+							
+							<button class="btn btn-default header-left-menu type="button" onClick="javascript:location.href='/shop/store/contactus.html';" aria-haspopup="true" aria-expanded="true">
+								<a href="/shop/store/contactus.html">Contactez-nous</a>
+							</button>
+							
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-4">
+							<div class="header-top-right">
+							<!-- Empty placeholder -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom-area ptb-10">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-2 col-sm-3 col-xs-12">
+						    <!-- logo -->
+							<div class="logo">
+								
+									
+									
+										
+						                		
+						                			<!--  use merchant store logo -->
+						                			<a class="grey store-name" href="/shop/">
+						                			<img class="logoImage" src="/static/files/DEFAULT/LOGO/logo.png"/>
+						                			</a>
+						                		
+						                		
+						                
+									
+								
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-5 hidden-sm hidden-xs">
+						
+							
+						
+							<!--
+							<div class="single-header-bottom-info">
+								<div class="header-bottom-icon">
+									<span class="lnr lnr-rocket"></span>
+								</div>
+								<div class="header-bottom-text">
+								</div>
+							</div>
+							-->
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-9 col-xs-12">
+						    <!-- search box -->
+		                    
+
+		                    <div class="input-group menu-search-box">
+   								<input type="text" class="form-control typeahead" type="search" name="q" id="searchField" placeholder="Recherche" value="" />
+   								<span class="input-group-btn">
+        							<button class="btn btn-default searchButton" type="button">Recherche</button>
+   								</span>
+								<!-- important for submitting search -->
+                                <form id="hiddenSearchForm" method="post" action="/shop/search/search.html">
+										<input type="hidden" id="hiddenQuery" name="q">
+								</form>
+							</div>
+							
+
+							
+						    <!-- Shopping cart -->
+						    						    						
+								<div class="header-bottom-right">
+									<div class="shop-cart" id="miniCartSummary"></div>
+									<div class="shop-cart-hover fix">
+									<ul id="miniCartDetails"></ul>
+									</div>
+								</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header-end -->
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//***** Search code *****
+$(document).ready(function() { 
+
+    //post search form
+   $(".searchButton").click(function(e){
+			var searchQuery = $('#searchField').val();
+			var q = searchQuery;
+			if(q==null || q =='') {
+				return;
+			}
+			$('#hiddenQuery').val(q);
+			var uri = '/shop/search/search.html';
+			e.preventDefault();//action url will be overriden
+	        $('#hiddenSearchForm').attr('action',uri).submit();
+   });
+
+   
+   
+	
+   var searchElements = new Bloodhound({
+		datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		
+	    remote: {
+    		url: '/services/public/search/DEFAULT/en/autocomplete.json?q=%QUERY',
+        	filter: function (parsedResponse) {
+            	// parsedResponse is the array returned from your backend
+            	console.log(parsedResponse);
+
+            	// do whatever processing you need here
+            	return JSON.parse(parsedResponse);
+        	}
+    	}
+	});
+   
+   searchElements.initialize();
+
+
+	var searchTemplate =  Hogan.compile([
+				     '<p class="suggestion-text"><font color="black">{{value}}</font></p>'
+	             ].join(''));
+	
+	
+    //full view search
+	$('#searchField.typeahead').typeahead({
+	    hint: true,
+	    highlight: true,
+	    minLength: 1
+	}, {
+		name: 'shopizer-search',
+	    displayKey: 'value',
+	    source: searchElements.ttAdapter(),
+	    templates: {
+	    	suggestion: function (data) { return searchTemplate.render(data); }
+	    }
+	});
+    
+    //responsive
+	$('#responsiveSearchField.typeahead').typeahead({
+	    hint: true,
+	    highlight: true,
+	    minLength: 1
+	}, {
+		name: 'modal-shopizer-search',
+	    displayKey: 'value',
+	    source: searchElements.ttAdapter(),
+	    templates: {
+	    	suggestion: function (data) { return searchTemplate.render(data); }
+	    }
+	});
+
+});
+
+</script>
+
+
+		<!-- mainmenu-area-start -->
+		<div class="mainmenu-area bg-color-1" id="main_h">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs">
+						<div class="mainmenu hidden-xs">
+							<nav>
+								<ul>
+								
+								
+									   <li class=""><a href="/shop/category/test-code-check.html/ref=c:161">test code check</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/tables.html/ref=c:1">Tables</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/living-room.html/ref=c:2">Living Room</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/bedroom.html/ref=c:50">Bedroom</a>
+										
+										<ul>
+											
+												<li><a href="/shop/category/night-tables.html/ref=c:100">Night Tables</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/decorations.html/ref=c:53">Decorations</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/late-test.html/ref=c:400">Late Test</a>
+										
+										<ul>
+											
+												<li><a href="/shop/category/lt-sub-category.html/ref=c:401">LT Sub category</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/category-refactoring.html/ref=c:450">Category Refactoring</a>
+										
+										<ul>
+											
+												<li><a href="/shop/category/test-789.html/ref=c:650">Test 789</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+							    
+										
+								
+										
+												<li><a href="/shop/pages/terms-and-policy.html" class="current">Terms and Policy</a></li>
+										
+								
+										
+								
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- mobile menu -->
+		<div class="mobile-menu-area hidden-sm hidden-md hidden-lg">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mobile-menu">
+							<nav id="mobile-menu">
+								<ul>
+								
+								
+									   <li class=""><a href="/shop/category/test-code-check.html/ref=c:161">test code check</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/tables.html/ref=c:1">Tables</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/living-room.html/ref=c:2">Living Room</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/bedroom.html/ref=c:50">Bedroom</a>
+										
+										<ul>
+											
+												<li><a href="/shop/category/night-tables.html/ref=c:100">Night Tables</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/decorations.html/ref=c:53">Decorations</a>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/late-test.html/ref=c:400">Late Test</a>
+										
+										<ul>
+											
+												<li><a href="/shop/category/lt-sub-category.html/ref=c:401">LT Sub category</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+									   <li class=""><a href="/shop/category/category-refactoring.html/ref=c:450">Category Refactoring</a>
+										
+										<ul>
+											
+												<li><a href="/shop/category/test-789.html/ref=c:650">Test 789</a></li>		
+											
+										</ul>
+										
+									   </li>
+								
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- mainmenu-area-end -->
+
+	
+		
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+<!-- overrides with v2 page -->
+
+
+<!-- phone number mask -->
+<script src="/resources/js/jquery.maskedinput.min.js"></script>
+<!-- generic checkout script -->
+<script src="/resources/js/shop-checkout.js"></script>
+
+<!-- 
+Templates definition
+ -->
+ 
+ <!-- subtotals template -->
+<script type="text/html" id="subTotalsTemplate">
+		{{#subTotals}}
+			<tr id="cart-subtotal-{{code}}" class="cart-subtotal subt"> 									
+				<td class="order-total-label">{{#discounted}}Rabais&nbsp;-&nbsp;{{text}}{{/discounted}}{{^discounted}}{{title}}{{/discounted}}</td> 
+				<td class="order-total-label"><strong>{{#discounted}}<font color="red">-{{total}}</font>{{/discounted}}{{^discounted}}{{total}}{{/discounted}}</strong></td> 
+			</tr>
+		{{/subTotals}}
+</script>
+
+<!-- total template -->
+<script type="text/html" id="totalTemplate">
+		<th>Total</th>
+		<td><strong><span class="amount grand-total">{{grandTotal}}</td>
+</script>
+
+											
+<!-- shipping template -->
+<script type="text/html" id="shippingTemplate">
+			<table id="shippingOptions">
+			{{#shippingOptions}}
+				<tr>
+				<td style="border: none !important;">	
+				<input type="radio" name="selectedShippingOption.optionId" code="{{shippingModuleCode}}" class="shippingOption" id="{{optionId}}" value="{{optionId}}" {{#checked}} checked="checked"{{/checked}}>
+				</td>
+				<td style="border: none !important;">	
+				<label> 
+					{{description}} - {{optionPriceText}}
+				</label>
+				</td>
+				</tr>
+				{{#note}}
+				<tr>
+				<td colspan="2" style="border: none !important;">
+					<span><small>{{note}}</small></span>
+				</td>
+				</tr>
+				{{/note}}
+			{{/shippingOptions}}
+			</table>						
+</script>
+											
+ 
+<script>
+
+<!-- definitions -->
+<!-- checkout form id -->
+var checkoutFormId = '#checkoutForm';
+
+<!-- get shipping quote url -->
+var shippingQuotesUrl = '/shop/order/shippingQuotes.json';
+
+var calculateTotalUrl = '/shop/order/calculateOrderTotal.json'
+
+<!-- checkout field id -->
+var formErrorMessageId = '#formErrorMessage';
+var useDistanceWindow = false;
+
+$(document).ready(function() {
+	
+	
+	//logic for initialyzing the form, needs to be maintained
+	
+	//form displaying shipping address
+	$("#confirmShippingAddress").hide();
+
+    formValid = false;	
+
+	<!-- 
+		//can use masked input for phone (USA - CANADA)
+	-->
+
+	paymentModule = 'moneyorder';
+	log('PaymentModule ' + paymentModule);
+	if(!paymentModule) {
+		paymentModule = '';
+	}
+	
+	formValid = isFormValid(); //first validation
+
+	bindActions();
+
+	
+		$('.billing-country-list').val('FR');
+		//apply mask
+		setCountrySettings('billing','FR');
+	
+	
+		$('.shipping-country-list').val('CA');
+		//apply mask
+		setCountrySettings('delivery','CA');
+	
+
+	<!-- customer state is text -->
+	
+	<!-- customer state is a know state -->
+	
+		$('#billingStateList').show();           
+		$('#billingStateProvince').hide();
+		/**
+		- Which list to populate
+		- Name of the field
+		- Country code
+		- Zone
+		- Long zone name
+		- lang code
+		- callback
+		**/
+		getZones('#billingStateList','#billingStateProvince','FR','QC', 'QC', 'en', validateForm); 
+	
+	
+	
+	
+	  
+		$('#deliveryStateList').show();          
+		$('#deliveryStateProvince').hide();
+		//populate zones
+		getZones('#deliveryStateList','#deliveryStateProvince','CA','QC', 'QC', 'en', validateForm);
+	
+
+	//when the list of country changes in the billing section
+	$(".billing-country-list").change(function() {
+		//populate zones
+		getZones('#billingStateList','#billingStateProvince',$(this).val(),'QC', 'QC', 'en', countryListChanged);
+		setCountrySettings('billing',$(this).val());
+    })
+    
+    //when the list of country changes in the shipping section
+    $(".shipping-country-list").change(function() {
+		getZones('#deliveryStateList','#deliveryStateProvince',$(this).val(),'QC', 'QC', 'en', countryListChanged);
+		setCountrySettings('delivery',$(this).val());
+    })
+
+
+	//do we have a shipping address pre populated with a postal code
+	//var deliveryPostalCode = null;
+	var address = null;
+	
+
+	
+	
+	//selected quote is not pickup
+	var shippingMethod = null;
+	
+	
+
+	
+	//console.log(address);
+	displayConfirmShipping(address,shippingMethod,useDistanceWindow);
+	
+
+});
+
+function countryListChanged() {
+	validateForm();
+	shippingQuotes(shippingQuotesUrl,useDistanceWindow);
+}
+
+
+function validateForm() {
+	isFormValid(shippingQuotesUrl);	
+}
+
+function isFormValid() {
+	$(formErrorMessageId).hide();//reset error message
+	var $inputs = $(checkoutFormId).find(':input');
+	var valid = true;
+	var firstErrorMessage = null;
+	$inputs.each(function() {
+		if($(this).hasClass('required')) {
+			var fieldValid = isCheckoutFieldValid($(this));
+			//log($(this).attr('id') + ' Is valid ' + fieldValid);
+			if(!fieldValid) {
+				if(firstErrorMessage==null) {
+					//log('Title ' + $(this).attr('title'));
+					if($(this).attr('title')) {
+						firstErrorMessage = $(this).attr('title');
+					}
+				}
+				valid = false;
+			}
+		}
+		if($(this).hasClass('email')) {	
+			var emailValid = validateEmail($(this).val());
+			//console.log('Email is valid ? ' + emailValid);
+			if(!emailValid) {
+				if(firstErrorMessage==null) {
+					firstErrorMessage = 'Veuillez fournir une adress courriel valide';
+					valid = false;
+				}
+			}
+		}
+	});
+	
+
+	//console.log('Form is valid ? ' + valid);
+	if(valid==false) {//disable submit button
+		if(firstErrorMessage!=null) {
+			$(formErrorMessageId).addClass('alert-error alert-danger');
+			$(formErrorMessageId).removeClass('alert-success');
+			$(formErrorMessageId).html('<!--<img src="/resources/img/icon_error.png" width="40"/>&nbsp;--><strong><font color="red">' + firstErrorMessage + '</font></strong>');
+			$(formErrorMessageId).show();
+		}
+		$('#submitOrder').addClass('btn-disabled');
+		$('#submitOrder').prop('disabled', true);
+	} else {
+		$(formErrorMessageId).removeClass('alert-error alert-danger');
+		$(formErrorMessageId).addClass('alert-success');
+		$(formErrorMessageId).html('<!--<img src="/resources/img/icon_success.png" width="40"/>&nbsp;--><strong>La commande peut être complétée</strong>');
+		$(formErrorMessageId).show();
+		$('#submitOrder').removeClass('btn-disabled');
+		$('#submitOrder').prop('disabled', false);
+	}
+
+	
+	return valid;
+}
+
+function isCheckoutFieldValid(field) {
+
+	var validateField = true;
+	var fieldId = field.prop('id');
+	var value = field.val();
+	if (fieldId.indexOf("creditcard") >= 0) {
+		validateField = false;	//ignore credit card number field
+	}
+	if(!field.is(':visible')) {
+		validateField = false; //ignore invisible fields
+	}
+	
+
+	//shipping information
+	
+	if (!$('#shipToDeliveryAddress').is(':checked')) {
+		//validate shipping fields
+		if (fieldId.indexOf("delivery") >= 0) {
+			validateField = false; //ignore shipping fields when ship to billing
+		}
+	}
+	
+	
+		//if any payment option need validation insert here
+		//console.log($('input[name=paymentMethodType]:checked', checkoutFormId).val());
+		//var paymentMethod = $('input[name=paymentMethodType]:checked', checkoutFormId).val();
+		var paymentType = $('input[name=paymentMethodType]').val();
+		//log('PaymentType ' + paymentType);
+		if(!paymentType) {
+			paymentType = '';
+		}
+		//log('Payment Method Type ' + paymentType);
+		if(paymentType=='CREDITCARD') {
+			if (fieldId.indexOf("creditcard") >= 0) {
+				if(fieldId!='creditcard_card_number' || fieldId!='creditcard-card-number') {
+					validateField = true;// but validate credit card fields when credit card is selected
+				}
+				if(fieldId=='creditcard_card_number' || fieldId=='creditcard-card-number') {
+					return isCreditCardValid();// validate credit card number differently
+				}
+			}
+		}
+	
+	
+
+	
+	if(!validateField) {
+		return true;
+	}
+	
+	if(field.attr('type')=='checkbox') {
+		if(field.is(":checked")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	if(!emptyString(value)) {
+		field.css('background-color', '#FFF');
+		return true;
+	} else {
+		field.css('background-color', '#FFC');
+		return false;
+	}
+}
+
+function showErrorMessage(message) {
+	
+	
+	showResponseErrorMessage(message);
+	$('#submitOrder').addClass('btn-disabled');
+	$('#submitOrder').prop('disabled', true);
+	
+	$(formErrorMessageId).addClass('alert-error alert-danger');
+	$(formErrorMessageId).removeClass('alert-success');
+	$(formErrorMessageId).html('<!--<img src="/resources/img/icon_error.png" width="40"/>&nbsp;--><strong><font color="red">' + message + '</font></strong>');
+	$(formErrorMessageId).show();
+	
+}
+
+function showResponseErrorMessage(message) {
+	
+	$('#checkoutError').addClass('alert');
+	$('#checkoutError').addClass('alert-error alert-danger');
+	$('#checkoutError').html(message);
+	
+}
+
+function resetErrorMessage() {
+	
+	$('#checkoutError').html('');
+	$('#checkoutError').removeClass('alert');
+	$('#checkoutError').removeClass('alert-error alert-danger');
+	$('.error').html('');
+	
+}
+
+
+
+//different form actions
+function bindActions() {
+	
+    $("#clickAgreement").click(function(){
+    	$("#customer-agreement-area").slideToggle("slow");
+	});
+	
+	bindCalculateShipping();
+	
+	$("input[type='text']").on("change keyup paste", function(){
+		isFormValid();
+	});
+	
+	$("input[type='checkbox']").on("change click", function(){
+		isFormValid();
+	});
+	
+   	$('input[name=paymentMethodType]', checkoutFormId).click(function() {
+    	isFormValid();//change payment method
+    });
+    
+    $("#billingStateList").change(function() {
+    	shippingQuotes(shippingQuotesUrl,useDistanceWindow);	
+    })
+    
+    $("#shippingStateList").change(function() {
+    	shippingQuotes(shippingQuotesUrl,useDistanceWindow);		
+    })
+    
+    $("input[id=billingPostalCode]").on('blur input', function() {
+		if (!$('#shipToDeliveryAddress').is(':checked')) {
+			shippingQuotes(shippingQuotesUrl,useDistanceWindow);
+		}
+     });
+	
+     $("input[id=deliveryPostalCode]").on('blur input', function() {
+		if ($('#shipToDeliveryAddress').is(':checked')) {
+			shippingQuotes(shippingQuotesUrl,useDistanceWindow);
+		}
+     });
+     
+     $(".paymentMethodSelected").click(function() { 
+    	 var paymentClicked = $(this).attr("name");
+    	 //console.log('Selected payment' + paymentClicked);
+    	 setPaymentModule(paymentClicked);
+    	 isFormValid();
+     });
+    
+    //shipping / billing decision checkbox
+    $("#shipToDeliveryAddress").click(function() {
+    	shippingQuotes(shippingQuotesUrl,useDistanceWindow);
+    	isFormValid();
+    	$('#ship-box-info').slideToggle(1000);
+    });
+    
+    //final order submission button
+	$("#submitOrder").click(function(e) {
+		e.preventDefault();//do not submit form
+		formValid = isFormValid();
+		resetErrorMessage();
+		setCountrySettings('billing',$('.billing-country-list').val());
+		setCountrySettings('delivery',$('.shipping-country-list').val());
+		//$('#submitOrder').disable();
+		
+		//confirm shipping
+		if(formValid) {
+				//validateConfirmShipping(response);
+				if($('#confirm_address')) {
+					//add confirm address section to shipping
+				}
+		}
+		
+		showSMLoading('#pageContainer');
+		var paymentSelection = $('#paymentModule').val();
+		log('Selection-> ' + paymentSelection);
+		if(paymentSelection.indexOf('paypal') >= 0 || paymentSelection.indexOf('PAYPAL') >= 0) {
+
+			//$('#paymentMethodType').val('PAYPAL');
+			$('#paymentMethodType').attr("value", 'PAYPAL');
+			initPayment('PAYPAL');
+		}
+		else if(paymentSelection.indexOf('stripe') >= 0) {
+			log('Stripe ');
+			//$('#paymentMethodType').val('CREDITCARD');
+			$('#paymentMethodType').attr("value", 'CREDITCARD');
+			initStripePayment();
+		}
+		else if(paymentSelection.indexOf('braintree') >= 0) {
+			log('Braintree ' + $('input[name=paymentMethodType]').val());
+			//$('#paymentMethodType').val('CREDITCARD');
+			$('#paymentMethodType').attr("value", 'CREDITCARD');
+			log('Payment method type -> ' + $('input[name=paymentMethodType]').val());
+			initBraintreePayment();
+		}
+		else if(paymentSelection.indexOf('moneyorder') >= 0) {
+			log('Money order ' + $('input[name=paymentMethodType]').val());
+			//$('#paymentMethodType').val('CREDITCARD');
+			$('#paymentMethodType').attr("value", 'MONEYORDER');
+			log('Payment method type -> ' + $('input[name=paymentMethodType]').val());
+			submitForm();
+		}
+		else if(paymentSelection.indexOf('beanstream') >= 0) {
+			//log('Beanstream ');
+			//$('#paymentMethodType').val('CREDITCARD');
+			$('#paymentMethodType').attr("value", 'CREDITCARD');
+			submitForm();
+		} else {
+			//submit form
+			submitForm();	
+		}
+    });
+}
+
+function submitForm() {
+	log('Checkout ');
+	$('#pageContainer').hideLoading();
+	$('#checkoutForm').submit();
+}
+
+function initPayment(paymentSelection) {
+	var url = '/shop/order/payment/init/' + paymentSelection + '.html';
+	var data = $(checkoutFormId).serialize();
+	$.ajax({
+		  type: 'POST',
+		  url: url,
+		  data: data,
+		  cache: false,
+		  dataType: 'json',
+		  success: function(response){
+			  	//$('#submitOrder').enable();
+			    hideSMLoading('#pageContainer');
+				var resp = response.response;
+				var status = resp.status;
+				//console.log(status);
+				if(status==0 || status ==9999) {
+					
+					var data = resp.url;
+					//console.log(resp.url);
+					location.href=resp.url;
+
+				} else if(status==-2) {//validation issues
+					
+					//console.log(resp.validations);
+				    var globalMessage = '';
+					for(var i = 0; i< resp.validations.length; i++) {
+						var fieldName = resp.validations[i].field;
+						var message = resp.validations[i].message;
+						//console.log(fieldName +  ' - ' + message);
+						//query for the field
+						var f = $(document.getElementById('error-'+fieldName));
+						if(f) {
+							f.html(message);
+						}
+						globalMessage = globalMessage + message + '<br/>';
+						
+					}
+					
+					showResponseErrorMessage(globalMessage);
+					
+					
+				} else {
+					//console.log('Wrong status ' + status);
+					showResponseErrorMessage('Une erreur s\'est produite en essayant de traîter le paiement (99)');
+					
+				}
+		  },
+		    error: function(xhr, textStatus, errorThrown) {
+		    	hideSMLoading('#pageContainer');
+		  		//alert('error ' + errorThrown);
+		    	showResponseErrorMessage(errorThrown);
+		  }
+
+	});
+	
+}
+
+
+</script>
+
+		<!-- page-title-wrapper-end -->
+		<!-- entry-header-area start -->
+		<div class="entry-header-area ptb-40">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="entry-header">
+							<h1 class="entry-title">Paiement</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- entry-header-area end -->
+		<!-- coupon-area start -->
+		<div class="coupon-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="coupon-accordion">
+							<!-- ACCORDION START -->
+							
+								<p class="muted common-row"><a href="/shop/customer/customLogon.html">Vous pouvez vous authentifier ou vous abonner afin de simplifier le processus d'achats !</a></p>
+												
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		
+		<!-- coupon-area end -->		
+		<!-- checkout-area start -->
+		<div class="checkout-area pb-50">
+			<div class="container">
+				<div class="row">
+				
+				
+					<!-- If error messages -->
+					<div id="checkoutError"  class="">
+						
+					</div>
+					<!--alert-error-->
+				
+   					
+   					<form id="checkoutForm" action="/shop/order/commitOrder.html" method="POST" enctype="multipart/form-data">
+						<input type="hidden" id="useDistanceWindow" name="useDistanceWindow" value="false">
+						<div class="col-lg-6 col-md-6">
+							<div class="checkbox-form">						
+								<h3>Informations sur la facturation </h3>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="checkout-form-list">
+											<label>Prénom<span class="required">*</span></label>										
+											
+											<input id="customer.firstName" name="customer.billing.firstName" class="required" title="Le pr&eacute;nom est requis" autofocus="autofocus" type="text" value=""/>
+											
+										    <span id="error-customer.billing.firstName" class="error"></span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="checkout-form-list">
+											<label>Nom<span class="required">*</span></label>										
+										    
+										    <input id="customer.lastName" name="customer.billing.lastName" class="required" title="Le nom est requis" type="text" value="" maxlength="32"/>
+										    
+										    <span id="error-customer.billing.lastName" class="error"></span>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="checkout-form-list">
+											<label>Nom de l'entreprise</label>
+										    <input id="customer.billing.company" name="customer.billing.company" type="text" value=""/>
+										    
+											<span id="error-customer.billing.company" class="error"></span>
+										</div>
+									</div>
+									
+									<div class="col-md-12">
+										<div class="checkout-form-list">
+											<label>Adresse civique <span class="required">*</span></label>
+										    
+										    <input id="customer.billing.address" name="customer.billing.address" class="required" title="L&#39;addresse est requise" type="text" value=""/><!-- geo locate -->
+										    
+										    <span id="error-customer.billing.address" class="error"></span>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="checkout-form-list">
+											<label>Ville <span class="required">*</span></label>
+											
+											<input id="customer.billing.city" name="customer.billing.city" class="required" title="La ville est requise" type="text" value="Clenay"/>
+											
+										    <span id="error-customer.billing.city" class="error"></span>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="country-select">
+											<label>Pays <span class="required">*</span></label>
+										    <select id="customer.billing.country" name="customer.billing.country" class="billing-country-list" style="background-color: rgb(255, 255, 255);">
+											  	<option value="BY">Belarus</option><option value="CA">Canada</option><option value="RO">Romania</option><option value="US">United States</option>
+										     </select>										
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="checkout-form-list zone-select">
+											<label>État / province <span class="required">*</span></label>										
+											<select id="billingStateList" name="customer.billing.zone" class="zone-list"></select>
+											
+											<input id="billingStateProvince" name="customer.billing.stateProvince" title="L&#39;&eacute;tat / province est requis" name="billingStateProvince" class="required" type="text" value="" maxlength="100"/>
+											
+											<span id="error-customer.billing.stateProvince" class="error"></span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="checkout-form-list">
+											<label>Code postal <span class="required">*</span></label>										
+											
+											<input id="billingPostalCode" name="customer.billing.postalCode" class="required billing-postalCode" title="Le code postal est requis" type="text" value=""/>
+											
+											<span id="error-customer.billing.postalCode" class="error"></span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="checkout-form-list">
+											<label>Adresse courriel <span class="required">*</span></label>										
+											 
+										    <input id="customer.emailAddress" name="customer.emailAddress" class="required" title="L&#39;adresse couriel est requise" type="text" value=""/>
+										    
+											<span id="error-customer.emailAddress" class="error"></span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="checkout-form-list">
+											<label>Téléphone  <span class="required">*</span></label>										
+											
+										    <input id="customer.billing.phone" name="customer.billing.phone" class="required" title="Le t&eacute;l&eacute;phone est requis" type="text" value=""/>
+										    
+											<span id="error-customer.billing.phone" class="error"></span>
+										</div>
+									</div>
+									
+									<div class="col-md-12">
+										<div class="checkout-form-list create-acc">	
+											<input id="cbox" type="checkbox" />
+											<label>Créer un compte ?</label>
+										</div>
+										<div id="cbox_info" class="checkout-form-list create-account">
+											<p>Créez un compte en fournissant les informations requises ci-bas. Si vous possédez déjà un compte utilisez le lien au haut de la page permettant de vous authentifier.</p>
+											
+											<label>Mot de passe du compte  <span class="required">*</span></label>
+											<input id="customer.clearPassword"
+	
+		
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+		<!-- footer-area-start -->
+		<div class="footer-area ptb-80">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mar_b-30">
+						<div class="footer-wrapper">
+							 
+							<ul>
+								
+
+
+
+
+
+
+
+
+ <address> 
+ 	<div itemscope itemtype="http://schema.org/Organization"> 
+ 	<strong><span itemprop="name">Importa</span></strong><br/>  
+ 	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"> 
+ 	<span itemprop="streetAddress">2545 commerce street Montreal</span><br/>
+ 	<span itemprop="addressLocality"><script>$.ajax({url: "/shop/reference/zoneName",type: "GET",data: "zoneCode=QC",success: function(data){$('#storeZoneName').html(data)}})</script><span id="storeZoneName">QC</span>,
+ 	<span id="storeCountryName"><script>$.ajax({url: "/shop/reference/countryName",type: "GET",data: "countryCode=CA",success: function(data){$('#storeCountryName').html(data)}})</script></span></span><br/>
+ 	<span itemprop="postalCode">H2H-2H2</span><br/>
+ 	<abbr title="Phone">Téléphone</abbr>: <span itemprop="telephone">888-988-8888</span>
+ 	</div>
+ 	</div>
+ </address> 
+
+								
+							</ul>
+							
+							
+							
+							   <ul class="footer-social">
+							       
+								   
+								   <li class="facebook"><a target="_blank" href="https://www.facebook.com/Shopizer/"><i class="fa fa-facebook"></i></a></li>
+								   
+								   
+								   <li class="pinterest"><a target="_blank" href="http://pinterest.com/shopizer"><i class="fa fa-pinterest"></i></a></li>
+								   
+								   
+							   	   <li class="instagram"><a target="_blank" href="http://instagram.com/shopizer"><i class="fa fa-instagram"></i></a></li>
+							       
+							   </ul>
+						   
+
+						</div>
+					</div>
+					<!--<div class="col-lg-2 col-md-3 hidden-sm col-xs-12 mar_b-30">-->
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mar_b-30">
+						<div class="footer-wrapper">
+						    <!--
+							<div class="footer-title">
+								<a href="#"><h3>useful links</h3></a>
+							</div>
+							-->
+							<div class="footer-wrapper">
+								
+								<ul class="usefull-link">
+									<li class="">
+										<a href="/shop">Page d'accueil</a>
+									</li>
+									
+								   <li>
+	    								<a href="/shop/category/test-code-check.html/ref=c:161" class="current"> 
+	    									<span class="name">test code check</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shop/category/tables.html/ref=c:1" class="current"> 
+	    									<span class="name">Tables</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shop/category/living-room.html/ref=c:2" class="current"> 
+	    									<span class="name">Living Room</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shop/category/bedroom.html/ref=c:50" class="current"> 
+	    									<span class="name">Bedroom</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shop/category/decorations.html/ref=c:53" class="current"> 
+	    									<span class="name">Decorations</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shop/category/late-test.html/ref=c:400" class="current"> 
+	    									<span class="name">Late Test</span>
+	    								</a>
+	    							</li> 
+									
+								   <li>
+	    								<a href="/shop/category/category-refactoring.html/ref=c:450" class="current"> 
+	    									<span class="name">Category Refactoring</span>
+	    								</a>
+	    							</li> 
+									
+								    
+											   <li><a href="/shop/pages/.html" class="current">Importa</a></li>
+									
+											   <li><a href="/shop/pages/terms-and-policy.html" class="current">Terms and Policy</a></li>
+									
+											   <li><a href="/shop/pages/test-page.html" class="current">Test_Page</a></li>
+									
+									
+										<li class=""><a href="/shop/store/contactus.html">Contactez-nous</a></li>
+									
+									
+										 
+										 
+										
+										 
+											  <li><a href="/shop?locale=fr">Français</a></li>
+										
+										
+									
+									
+						                     
+						                       
+						                        
+														<li><a href="/shop/customer/registration.html">Enregistrer</a></li>
+														<li><a href="/shop/customer/customLogon.html">Authentification</a></li>
+												
+									
+								</ul>
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<div class="footer-wrapper">
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer-area-end -->
+		<!-- .copyright-area-start -->
+		<div class="copyright-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mar_b-30">
+						<div class="copyright text-left">
+							<p>© Importa 2019-2022&nbsp;-&nbsp;Propulsé par <a href="http://www.shopizer.com" class="footer-href" target="_blank">Shopizer</a></p>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						
+						<div class="copyright-img text-right">
+							<img src="/resources/img/payment/icons/MasterCard.png" width="50" alt="" />&nbsp;<img src="/resources/img/payment/icons/Visa.png" width="50" alt="" />&nbsp;<img src="/resources/img/payment/icons/AmericanExpress.png" width="50" alt="" />&nbsp;<img src="/resources/img/payment/icons/PayPal.png" width="50" alt="" />
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- .copyright-area-end -->
+
+	
+
+
+
+
+
+
+    <!-- specific js files -->
+    <!-- do only change the list of js files -->
+    <!-- ////////////// -->
+
+    
+    
+    <script src="/resources/templates/generic/js/bootstrap.min.js"></script>
+    <script src="/resources/templates/generic/js/owl.carousel.min.js"></script>
+    <script src="/resources/templates/generic/js/jquery.meanmenu.js"></script>
+    <script src="/resources/templates/generic/js/jquery-ui.min.js"></script>
+    <script src="/resources/templates/generic/js/slippry.min.js"></script>
+    <script src="/resources/templates/generic/js/wow.min.js"></script>
+    <script src="/resources/templates/generic/js/jquery.scrolly.js"></script>
+    <script src="/resources/templates/generic/js/loadingoverlay.min.js"></script>
+    
+    
+    <script src="/resources/templates/generic/js/jquery.magnific-popup.min.js"></script>
+    <script src="/resources/templates/generic/js/plugins.js"></script>
+
+    
+    
+    
+    <script src="/resources/templates/generic/js/main.js"></script>
+  
+    
+    
+    <!-- required common scripts for shopizer -->
+    <script src="/resources/js/jquery.raty.min.js"></script>
+	<script src="/resources/js/shop-functions.js"></script>
+	<script src="/resources/js/shop-customer.js"></script>
+    
+
+
+
+ 
+
+
+
+<script>
+
+function getContextPath() {
+   return "";
+}
+
+function getMerchantStore() {
+   return "1";
+}
+
+function getMerchantStoreCode() {
+   return "DEFAULT";
+}
+
+function getLanguageCode() {
+   return "en";
+}
+
+function supportsCustomerLogin() {
+	
+	
+		return true;
+	
+	
+	
+}
+
+function getItemLabel(quantity) {
+	var labelItem = 'article';
+	if (quantity > 1) {
+		labelItem = 'articles';
+	}
+	return labelItem;
+}
+
+//assign rating on a list of products
+function setProductRating(productList) {
+	jQuery.each( productList, function( i, val ) {
+		var pId = '#productRating_' + val.id; 
+	    $(pId).raty({ 
+			readOnly: true,
+			half: true,
+			path : '/resources/img/stars/',
+			score: val.ratingCount
+		});
+	 });
+}
+
+function getLoginErrorLabel() {
+	return 'Authentication échouée. Le nom d\'usager ou le mot de passe est invalide.';
+}
+
+function getEmptyCartLabel() {
+	return 'Your Shopping cart is empty';
+}
+
+
+function getInvalidEmailMessage() {
+	return 'Veuillez fournir une adress courriel valide';
+}
+
+function getInvalidUserNameMessage() {
+	return 'Le nom d\'usager doit contenir au moins 6 caractères';
+}
+
+
+function getInvalidPasswordMessage() {
+	return 'Le mot de passe doit avoir au moins 6 caractéres';
+}
+
+function getInvalidCheckPasswordMessage() {
+	return 'Les deux mots de passe doivent être identiques';
+}
+
+function cartInfoLabel(cart){
+	 var labelItem = getItemLabel(cart.quantity);
+	 <!-- A configuration is required to display quantity and price -->
+	 
+	 
+	 
+	 $("#cartinfo").html('<span id="cartqty">(' + cart.quantity + ' ' + labelItem + ')</span>');
+	 
+	 
+}
+
+function cartSubTotal(cart) {
+	return '<div class="pull-right"><font class="total-box-label">Sous-total : <font class="total-box-price"><strong><span id="checkout-total">' + cart.subTotal + '</span></strong></font></font></div>';
+}
+
+
+function getOrderValidationMessage(messageKey) {
+	
+	//stripe messages
+	var invalid_number 	= 'Le numéro de carte de crédit est invalide';
+	var error_creditcard 	= 'Les données de la carte de crédit sont invalides';
+	var invalid_expiry_month = 'La date d\'expiration de la carte de crédit est invalide';
+	var invalid_expiry_year = 'La date d\'expiration de la carte de crédit est invalide';
+	var invalid_cvc 	= 'Le numéro de vérification inscrit sur la carte est invalide';
+	var incorrect_number = 'Le numéro de carte de crédit est invalide';
+	var expired_card 	= 'La transaction a été refusée';
+	var incorrect_cvc 	= 'Le numéro de vérification inscrit sur la carte est invalide';
+	var card_declined 	= 'La transaction a été refusée';
+	var processing_error = 'Une erreur est survenue en essayant de compléter le paiement, si possible utiliser une autre méthode de paiement.';
+	var rate_limit = 'Une erreur est survenue en essayant de compléter le paiement, si possible utiliser une autre méthode de paiement.';
+	
+	var map = new Object(); // or var map = {};
+	map['invalid_number'] = invalid_number;
+	map['error_creditcard'] = error_creditcard;
+	map['invalid_expiry_month'] = invalid_expiry_month;
+	map['invalid_expiry_year'] = invalid_expiry_year;
+	map['invalid_cvc'] = invalid_cvc;
+	map['incorrect_number'] = incorrect_number;
+	map['expired_card'] = expired_card;
+	map['incorrect_cvc'] = incorrect_cvc;
+	map['card_declined'] = card_declined;
+	map['processing_error'] = processing_error;
+	map['rate_limit'] = rate_limit;
+	
+	//log('Got message key ' + messageKey);
+	
+	var message = map[messageKey];
+	
+	if(message==null) {
+		message = messageKey;
+	}
+	
+	return message;
+
+	
+}
+
+
+
+
+</script>
+    <script src="/resources/js/json2.js"></script>
+    <script src="/resources/js/jquery-cookie.js"></script>
+    <script src="/resources/js/shop-minicart.js"></script>
+    <script src="/resources/js/shop-account.js"></script>
+    <script src="/resources/js/login.js"></script>
+    <script src="/resources/js/jquery.showLoading.min.js"></script>
+
+
+	<!-- ////////////// -->
+
+
+     
+
+   
+
+ 	</body>
+ 
+ </html>
+ 

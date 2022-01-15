@@ -1,0 +1,10 @@
+GET http://192.168.1.21:8080/shopizer/resources/img/stars/star-off.png HTTP/1.1
+Host: 192.168.1.21:8080
+Proxy-Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Referer: http://192.168.1.21:8080/shopizer/shop/product/compact-night-table.html
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: JSESSIONID=5F44BB0CCB98E741FB4CF6C4613F9196; __utmc=23060091; __utmz=23060091.1641897889.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); cart=DEFAULT_0313e8bf923a426b9bce113238c0f7eb; __utma=23060091.259194310.1641897889.1641912919.1641917593.3; __utmt=1; __utmb=23060091.3.10.1641917593
+

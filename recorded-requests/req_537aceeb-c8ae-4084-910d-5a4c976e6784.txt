@@ -1,0 +1,11 @@
+GET http://alexismarjollet.ddns.net:8080/shop/cart/shoppingCart.html HTTP/1.1
+Host: alexismarjollet.ddns.net:8080
+Proxy-Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://alexismarjollet.ddns.net:8080/shop/cart/shoppingCart.html
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: JSESSIONID=9AD480B48D2161C3308DC3D5C8F9EEE8; __utma=198623999.1665399969.1642010767.1642010767.1642010767.1; __utmc=198623999; __utmz=198623999.1642010767.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1; cart=DEFAULT_3e04a4a967f64f429558aebc369e9820; __utmb=198623999.2.10.1642010767
+

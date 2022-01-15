@@ -1,0 +1,8 @@
+GET http://192.168.1.21:8080/shopizer/resources/templates/generic/img/favicon.ico HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Host: 192.168.1.21:8080
+Proxy-Connection: Keep-Alive
+Cookie: JSESSIONID=7968E0EAEEF8274654AB6CA50E88D574; __utma=23060091.1428915512.1641915892.1641915892.1641915892.1; __utmb=23060091.1.10.1641915892; __utmc=23060091; __utmz=23060091.1641915892.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+

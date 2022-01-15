@@ -1,0 +1,10 @@
+GET http://192.168.1.21:8080/shopizer/resources/templates/generic/css/template.css HTTP/1.1
+Accept: text/css, */*
+Referer: http://192.168.1.21:8080/shopizer/shop
+Accept-Language: fr-FR,fr;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: 192.168.1.21:8080
+Proxy-Connection: Keep-Alive
+Cookie: JSESSIONID=29CA6EC5F0C163E14E36FCF796373D9F; __utmz=23060091.1641915892.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utma=23060091.1428915512.1641915892.1641915892.1641915892.1; cart=DEFAULT_69ba55b28e114c01a27c8597ac93a60e
+

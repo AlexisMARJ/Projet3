@@ -1,0 +1,344 @@
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Rapport de test de performance</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="leftnavigation">
+<div class="divHeader">Rapport de Test NeoLoad</div>
+<div class="menu_wrapper">
+<div class="item">
+<a href="./summary.html">Synth&egrave;se</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.resultssummary">Synth&egrave;se des R&eacute;sultats</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.statisticssummary">Synth&egrave;se des Statistiques</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.hotspots">Points chauds</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.errors">Erreurs</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.alerts">Alertes</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.summary.all">Statistiques g&eacute;n&eacute;rales</a>
+</div>
+<div class="subitem">
+<a href="./summary.html#report.summary.transactions">Statistiques des transactions</a>
+</div>
+<div class="item">
+<a href="./settings.html">Contexte d'ex&eacute;cution</a>
+</div>
+<div class="item">
+<a href="./servers.html">Serveurs</a>
+</div>
+<div class="item">
+<a href="./populations.html">Populations</a>
+</div>
+<div class="item">
+<a href="./virtual-users.html">Parcours Utilisateur</a>
+</div>
+<div class="item">
+<a href="./transactions.html">Transactions</a>
+</div>
+<div class="item">
+<a href="./pages.html">Pages</a>
+</div>
+<div class="item">
+<a href="./medias.html">Contenus M&eacute;dias</a>
+</div>
+<div class="item">
+<a href="./pushmessages.html">Messages push</a>
+</div>
+<div class="item">
+<a href="./monitors.html">Moniteurs</a>
+</div>
+<div class="item">
+<a href="./scenario_scenarioTest.html">Sc&eacute;nario</a>
+</div>
+<div class="title">Graphes principaux</div>
+<div class="item">
+<a href="./Graphes principaux_pages.average.html">Temps de r&eacute;ponse moyen (pages)</a>
+</div>
+<div class="item">
+<a href="./Graphes principaux_requests.average.html">Temps de r&eacute;ponse moyen (requ&ecirc;tes)</a>
+</div>
+<div class="item">
+<a href="./Graphes principaux_transactions.average.html">Temps de r&eacute;ponse moyen (Transactions)</a>
+</div>
+<div class="item">
+<a href="./Graphes principaux_hits.html">Requ&ecirc;tes par seconde</a>
+</div>
+<div class="item">
+<a href="./Graphes principaux_errors.html">Erreurs</a>
+</div>
+<div class="item">
+<a href="./Graphes principaux_throughput.html">D&eacute;bit</a>
+</div>
+<div class="item">
+<a href="./Graphes principaux_pages.average.vu.html">Temps de r&eacute;ponse moyen en fonction de la charge</a>
+</div>
+<div class="item">
+<a href="./Graphes principaux_percentile.html">Distribution de la dur&eacute;e des Transactions</a>
+</div>
+</div>
+<div style="float: right;">
+<img style="margin-top: 10px; margin-bottom: 0px; margin-right: 4px" src="./images/logo_tricentis.png"></div>
+</div>
+<div id="content">
+<div class="divHeader">Moniteurs</div>
+<p class="mediumtitle">Contr&ocirc;leur</p>
+<div style="width: 100%; height: 20px;" id="report.monitors">
+<div style="float:left" class="h1" id="statistics_summary_title">Compteurs de performance</div>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="monitors_template">
+<th width="36%"></th><th width="5%">Min</th><th width="5%">Moy</th><th width="5%">Max</th><th width="5%">M&eacute;d</th><th width="5%">Moy-90%</th><th width="5%">Ecart Type</th>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Charge Utilisateurs</span></td><td class="line2right bordered">0</td><td class="line2right bordered">23,4</td><td class="line2right bordered">50</td><td class="line2right bordered">23</td><td class="line2right bordered">23,1</td><td class="line2right bordered">15,2</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/D&eacute;bit</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Alertes</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Alertes critiques</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Alertes d'avertissement</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Charge CPU</span></td><td class="line1right bordered">0</td><td class="line1right bordered">8,76</td><td class="line1right bordered">21</td><td class="line1right bordered">8</td><td class="line1right bordered">8,55</td><td class="line1right bordered">2,9</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/M&eacute;moire utilis&eacute;e</span></td><td class="line2right bordered">0</td><td class="line2right bordered">5,97</td><td class="line2right bordered">8</td><td class="line2right bordered">6</td><td class="line2right bordered">5,98</td><td class="line2right bordered">1,24</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Nombre de threads</span></td><td class="line1right bordered">0</td><td class="line1right bordered">382,9</td><td class="line1right bordered">411</td><td class="line1right bordered">386,5</td><td class="line1right bordered">385,5</td><td class="line1right bordered">35,5</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Connect&eacute;s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0,993</td><td class="line2right bordered">1</td><td class="line2right bordered">1</td><td class="line2right bordered">1</td><td class="line2right bordered">0,083</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Total d&eacute;connexions</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Total reconnexions</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/Segments envoy&eacute;s/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">182,3</td><td class="line1right bordered">3&nbsp;446</td><td class="line1right bordered">0</td><td class="line1right bordered">95,6</td><td class="line1right bordered">486,6</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/Segments retransmis/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/wlan1 (Microsoft Wi-Fi Direct Virtual Adapter)/Megabits re&ccedil;us/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/wlan1 (Microsoft Wi-Fi Direct Virtual Adapter)/Megabits envoy&eacute;s/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/wlan0 (Intel(R) Dual Band Wireless-AC 8265)/Megabits re&ccedil;us/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0,059</td><td class="line1right bordered">0,428</td><td class="line1right bordered">0,014</td><td class="line1right bordered">0,049</td><td class="line1right bordered">0,095</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/wlan0 (Intel(R) Dual Band Wireless-AC 8265)/Megabits envoy&eacute;s/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0,014</td><td class="line2right bordered">0,079</td><td class="line2right bordered">0,014</td><td class="line2right bordered">0,013</td><td class="line2right bordered">0,01</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/eth4 (Bluetooth Device (Personal Area Network))/Megabits re&ccedil;us/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/eth4 (Bluetooth Device (Personal Area Network))/Megabits envoy&eacute;s/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/eth2 (Realtek PCIe GbE Family Controller)/Megabits re&ccedil;us/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/R&eacute;seau/eth2 (Realtek PCIe GbE Family Controller)/Megabits envoy&eacute;s/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/NeoLoad Web/Megabits re&ccedil;us/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/NeoLoad Web/Megabits envoy&eacute;s/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Zone par d&eacute;faut/Charge Utilisateurs</span></td><td class="line1right bordered">0</td><td class="line1right bordered">23,4</td><td class="line1right bordered">50</td><td class="line1right bordered">23</td><td class="line1right bordered">23,1</td><td class="line1right bordered">15,2</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Zone par d&eacute;faut/PopulationMixed/Charge Utilisateurs</span></td><td class="line2right bordered">0</td><td class="line2right bordered">23,6</td><td class="line2right bordered">50</td><td class="line2right bordered">23</td><td class="line2right bordered">23,3</td><td class="line2right bordered">15,1</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Zone par d&eacute;faut/PopulationMixed/Panier_final/Charge Utilisateurs</span></td><td class="line1right bordered">0</td><td class="line1right bordered">9,03</td><td class="line1right bordered">20</td><td class="line1right bordered">9</td><td class="line1right bordered">8,88</td><td class="line1right bordered">6,76</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Contr&ocirc;leur/Zone par d&eacute;faut/PopulationMixed/categorie_bedroom_final/Charge Utilisateurs</span></td><td class="line2right bordered">0</td><td class="line2right bordered">14,6</td><td class="line2right bordered">30</td><td class="line2right bordered">14</td><td class="line2right bordered">14,4</td><td class="line2right bordered">8,71</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="mediumtitle">MYSQLMonitor/mysql<span class="mediumtitle-label"> monitor&eacute; depuis </span>localhost</p>
+<div style="width: 100%; height: 20px;" id="report.monitors">
+<div style="float:left" class="h1" id="statistics_summary_title">Compteurs de performance</div>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="monitors_template">
+<th width="36%"></th><th width="5%">Min</th><th width="5%">Moy</th><th width="5%">Max</th><th width="5%">M&eacute;d</th><th width="5%">Moy-90%</th><th width="5%">Ecart Type</th>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Connections/threads connected</span></td><td class="line2right bordered">1</td><td class="line2right bordered">1</td><td class="line2right bordered">1</td><td class="line2right bordered">1</td><td class="line2right bordered">1</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Connections/aborted clients</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Connections/aborted connects</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Connections/max used</span></td><td class="line1right bordered">1</td><td class="line1right bordered">1</td><td class="line1right bordered">1</td><td class="line1right bordered">1</td><td class="line1right bordered">1</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Select Rates/select full join</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Select Rates/select range check</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Read Rates/handler read random</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Read Rates/handler read random next</span></td><td class="line1right bordered">348</td><td class="line1right bordered">348</td><td class="line1right bordered">348</td><td class="line1right bordered">348</td><td class="line1right bordered">348</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Key Rates/key reads (disk)</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Key Rates/key writes (disk)</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Commands Rates/handler rollback</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Commands Rates/handler savepoint rollback</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Tables/table locks waited</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Memory/% key buffer size</span></td><td class="line1right bordered">18,2</td><td class="line1right bordered">18,2</td><td class="line1right bordered">18,2</td><td class="line1right bordered">18,2</td><td class="line1right bordered">18,2</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Misc./slow queries</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Misc./slow launch threads</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Misc./sort merge passes</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">MYSQLMonitor/mysql/Misc./not flushed delayed rows</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td>
+</tr>
+</table>
+</div>
+</div>
+<div style="width: 100%; height: 20px;" id="report.textualmonitors">
+<div style="float:left" class="h1" id="statistics_summary_title">Indicateurs</div>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="monitors_template2">
+<tr>
+<td class="line2 bordered"><span class="tablelabel">
+                &nbsp;
+                MYSQLMonitor/mysql/Description/Database Version</span></td><td class="line2 bordered">
+<ul class="valuesList">
+<li>5.7.33-0ubuntu0.16.04.1</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="mediumtitle">Injecteur localhost:7100</p>
+<div style="width: 100%; height: 20px;" id="report.monitors">
+<div style="float:left" class="h1" id="statistics_summary_title">Compteurs de performance</div>
+</div>
+<div class="wrapper" align="center">
+<div align="center">
+<table class="monitors_template">
+<th width="36%"></th><th width="5%">Min</th><th width="5%">Moy</th><th width="5%">Max</th><th width="5%">M&eacute;d</th><th width="5%">Moy-90%</th><th width="5%">Ecart Type</th>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/Charge CPU</span></td><td class="line2right bordered">0</td><td class="line2right bordered">8,76</td><td class="line2right bordered">21</td><td class="line2right bordered">8</td><td class="line2right bordered">8,56</td><td class="line2right bordered">2,91</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/M&eacute;moire utilis&eacute;e</span></td><td class="line1right bordered">0</td><td class="line1right bordered">6,34</td><td class="line1right bordered">9</td><td class="line1right bordered">6</td><td class="line1right bordered">6,34</td><td class="line1right bordered">1,75</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/D&eacute;bit</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/Charge Utilisateurs</span></td><td class="line1right bordered">0</td><td class="line1right bordered">23,4</td><td class="line1right bordered">50</td><td class="line1right bordered">23</td><td class="line1right bordered">23,1</td><td class="line1right bordered">15,2</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/Nombre de threads</span></td><td class="line2right bordered">0</td><td class="line2right bordered">82,6</td><td class="line2right bordered">110</td><td class="line2right bordered">83</td><td class="line2right bordered">83,3</td><td class="line2right bordered">17,8</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/Client HTTP/Nombre de threads</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0,101</td><td class="line1right bordered">0,105</td><td class="line1right bordered">0,1</td><td class="line1right bordered">0,101</td><td class="line1right bordered">0,009</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/Client HTTP/Nombre de t&acirc;ches</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/Connexion Contr&ocirc;leur/D&eacute;connexions</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/Connexion Contr&ocirc;leur/Reconnexions</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/Connexion Contr&ocirc;leur/Temps du ping (ms)</span></td><td class="line1right bordered">4</td><td class="line1right bordered">5,89</td><td class="line1right bordered">7</td><td class="line1right bordered">6</td><td class="line1right bordered">5,92</td><td class="line1right bordered">0,828</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/Segments envoy&eacute;s/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">22,7</td><td class="line2right bordered">1&nbsp;310</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">134,7</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/Segments retransmis/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/wlan1 (Microsoft Wi-Fi Direct Virtual Adapter)/Megabits re&ccedil;us/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/wlan1 (Microsoft Wi-Fi Direct Virtual Adapter)/Megabits envoy&eacute;s/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/wlan0 (Intel(R) Dual Band Wireless-AC 8265)/Megabits re&ccedil;us/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0,059</td><td class="line2right bordered">0,427</td><td class="line2right bordered">0,014</td><td class="line2right bordered">0,05</td><td class="line2right bordered">0,095</td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/wlan0 (Intel(R) Dual Band Wireless-AC 8265)/Megabits envoy&eacute;s/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0,014</td><td class="line1right bordered">0,079</td><td class="line1right bordered">0,014</td><td class="line1right bordered">0,014</td><td class="line1right bordered">0,01</td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/eth4 (Bluetooth Device (Personal Area Network))/Megabits re&ccedil;us/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/eth4 (Bluetooth Device (Personal Area Network))/Megabits envoy&eacute;s/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td>
+</tr>
+<tr>
+<td class="line2left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/eth2 (Realtek PCIe GbE Family Controller)/Megabits re&ccedil;us/s</span></td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered">0</td><td class="line2right bordered"> - </td>
+</tr>
+<tr>
+<td class="line1left bordered"><span class="tablelabel left-block-margin">Injecteur localhost:7100/R&eacute;seau/eth2 (Realtek PCIe GbE Family Controller)/Megabits envoy&eacute;s/s</span></td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered">0</td><td class="line1right bordered"> - </td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

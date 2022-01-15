@@ -1,0 +1,8 @@
+GET http://192.168.1.21:8080/shopizer/shop HTTP/1.1
+Accept: text/html, application/xhtml+xml, image/jxr, */*
+Accept-Language: fr-FR,fr;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Accept-Encoding: gzip, deflate
+Host: 192.168.1.21:8080
+Proxy-Connection: Keep-Alive
+

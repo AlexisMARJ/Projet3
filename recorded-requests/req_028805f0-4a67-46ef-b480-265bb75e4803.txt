@@ -1,0 +1,10 @@
+GET http://192.168.1.21:8080/shopizer/resources/js/hogan.js HTTP/1.1
+Host: 192.168.1.21:8080
+Proxy-Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36
+Accept: */*
+Referer: http://192.168.1.21:8080/shopizer/shop
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: JSESSIONID=F8EC18F5BDADE7D32AF79868755903BC; __utma=23060091.259194310.1641897889.1641897889.1641897889.1; __utmc=23060091; __utmz=23060091.1641897889.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)
+
