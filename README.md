@@ -1,1 +1,1 @@
-# Projet3 Integration contninue Shopizer 2.7.0
+# Projet3 Integration continue Shopizer 2.7.0
